@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    
+    <groupId>ericminio.osgi</groupId>
+    <artifactId>hello-world</artifactId>
+    <name>hello-world</name>
+    <version>1.0.0</version>
+    <packaging>bundle</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.core</artifactId>
+            <version>6.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+              <groupId>org.apache.felix</groupId>
+              <artifactId>maven-bundle-plugin</artifactId>
+              <version>3.3.0</version>
+              <extensions>true</extensions>
+              <configuration>
+                  <instructions>
+                      <Bundle-SymbolicName>hello-world</Bundle-SymbolicName>
+                      <Bundle-Name>hello-world</Bundle-Name>
+                      <Bundle-Version>1.0.0</Bundle-Version>
+                      <Bundle-Activator>ericminio.osgi.HelloWorld</Bundle-Activator>
+                      <Private-Package>ericminio</Private-Package>            
+                  </instructions>
+              </configuration>
+          </plugin>
+        </plugins>
+    </build>
+
+</project>
