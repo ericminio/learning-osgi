@@ -2,8 +2,10 @@ version: 2.1
 jobs:
   build:
     docker: 
-      - image: circleci/node:4.8.2
+      - image: circleci/openjdk:8u242-jdk
     steps:
       - checkout
-      - run: echo "hello world"
+      - run: mvn clean package
+      - run: ls -la target
+      - run: docker ps -a
 
