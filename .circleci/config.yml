@@ -5,6 +5,7 @@ jobs:
       - image: circleci/openjdk:8u242-jdk
     steps:
       - checkout
+      - setup_remote_docker
       - run: mvn clean package
       - run: ls -la target
       - run: docker ps -a
