@@ -1,0 +1,9 @@
+version: '3.4'
+
+services:
+    
+  karaf:
+    image: apache/karaf:4.2.8
+    container_name: karaf
+    volumes:
+      - ./target:/tmp/package

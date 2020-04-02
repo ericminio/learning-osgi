@@ -3,7 +3,13 @@ language: java
 jdk:
   - oraclejdk8
 services:
-    - docker
+  - docker
 script:
-    - ls -la
-    - docker run --rm hello-world
+  - mvn clean package
+  - ls -la target
+  - docker-compose up -d karaf
+  - sleep 15
+  - docker-compose exec karaf bash -c "ls -la /tmp/package"
+  - docker-compose exec karaf bash -c "cp /tmp/package/hello-world-1.0.0.jar /opt/apache-karaf/deploy"
+  - sleep 3
+  - ./support/test.sh ./tests
