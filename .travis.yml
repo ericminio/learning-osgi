@@ -6,10 +6,9 @@ services:
   - docker
 script:
   - mvn clean package
-  - ls -la target
   - docker-compose up -d karaf
   - sleep 15
   - docker-compose exec karaf bash -c "ls -la /tmp/package"
   - docker-compose exec karaf bash -c "cp /tmp/package/hello-world-1.0.0.jar /opt/apache-karaf/deploy"
-  - sleep 3
+  - sleep 5
   - ./support/test.sh ./tests
