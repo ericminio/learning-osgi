@@ -1,1 +1,1 @@
-[![CircleCI](https://circleci.com/gh/ericminio/learning-osgi.svg?style=svg)](https://circleci.com/gh/ericminio/learning-osgi)
+[![Build Status](https://travis-ci.org/ericminio/learning-osgi.svg?branch=master)](https://travis-ci.org/ericminio/learning-osgi)
